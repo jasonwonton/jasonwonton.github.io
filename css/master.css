@@ -1,0 +1,58 @@
+/*Navbar*/
+.nav-link.active:hover, .navbar-brand:hover, .image:hover{
+  opacity: .3;
+  transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
+}
+
+.navbar-brand{
+  font-weight: 450;
+  font-size: 22px;
+}
+
+nav.pills, .nav-link.active, .nav-link.disabled, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #f8f9fa!important;
+    padding: 1rem;
+    font-weight: 400;
+}
+/*End Navbar*/
+
+/*Title + Paragraphs*/
+.container-fluid{
+  border-top: .5px solid grey;
+  padding-top: 1%;
+}
+
+h1{
+	text-align: center;
+  padding: 1%;
+}
+
+h2{
+	text-align: center;
+  padding: 1%;
+}
+
+
+p{
+	margin-left: 8%;
+	margin-right:8% ;
+}
+
+#p1{
+	font-weight: 450;
+}
+
+
+blockquote{
+	margin-left: 8%;
+	margin-right:8% ;
+}
+
+#KochQuote{
+  font-family: 'Slabo 27px', serif;
+  font-weight: bold;
+  font-style: italic;
+}

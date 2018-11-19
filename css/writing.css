@@ -1,0 +1,25 @@
+/*Navbar*/
+.nav-link.active:hover, .navbar-brand:hover{
+  opacity: .3;
+  transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
+}
+
+.navbar-brand{
+  font-weight: 450;
+  font-size: 22px;
+}
+
+nav.pills, .nav-link.active, .nav-link.disabled, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #f8f9fa!important;
+    padding: 1rem;
+    font-weight: 400;
+}
+/*End Navbar*/
+
+.container-fluid{
+  border-top: .5px solid grey;
+}
+

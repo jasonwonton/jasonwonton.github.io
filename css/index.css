@@ -1,0 +1,71 @@
+/*Navbar*/
+.nav-link.active:hover, .navbar-brand:hover, .image:hover{
+  opacity: .3;
+  transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
+}
+
+.navbar-brand{
+  font-weight: 450;
+  font-size: 22px;
+}
+
+nav.pills, .nav-link.active, .nav-link.disabled, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #f8f9fa!important;
+    padding: 1rem;
+    font-weight: 400;
+}
+/*End Navbar*/
+
+/*Avatar*/
+.img-thumbnail{
+	border:0;
+}
+
+#container-fluid-1{
+	width:100%;
+	height:50%;
+	padding-top:2rem;
+	padding-bottom:2rem;
+	border-top: .5px solid grey;
+	text-align: center;
+}
+
+/*Hello statment*/
+h2{
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*Quote*/
+h4{
+	font-family: 'Slabo 27px', serif;
+	font-size: 16px;
+}
+
+/*Buttons*/
+#i{
+  margin-top:1rem;
+	margin-left: 15%
+}
+
+i{	
+  font-size: 63px;
+	color:black;
+}
+
+i:hover{ 
+  opacity: .3;
+  transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -webkit-transition: opacity .4s ease-in-out;
+}
+
+#particles-js {
+    position : absolute;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
