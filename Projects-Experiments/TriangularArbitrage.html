@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cryptocurrency Trading</title>
+<!-- Start Links -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120209270-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-120209270-1');
+</script>
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/png" href="konoha.png"/> 
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- Boostrap Mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:600|Slabo+27px" rel="stylesheet">
+<!-- CSS -->
+<link rel="stylesheet" href="../css/master.css">
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Javascript -->
+<script src="whothis.js"></script>
+<!-- End Links -->
+<!-- NavBar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light overlay">
+  <a class="navbar-brand" href="https://jasonwonton.github.io/">Jason Wong</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav nav-pills">
+          <a class="nav-link active" href="https://jasonwonton.github.io/whothis">Jason Who?</a>
+        </li>
+        <li class="nav nav-pills">
+          <a class="nav-link active" href="https://jasonwonton.github.io/writing">Writing</a>
+        </li>
+        <li class="nav nav-pills">
+            <a class="nav-link active" href="https://jasonwonton.github.io/Projects-Experiments">Projects/Experiments</a>
+        </li>
+        <li class="nav nav-pills">
+          <a class="nav-link active" href="Jason's Resume.pdf">Resume</a>
+        </li>
+    </ul>
+  </div>
+</nav> 
+<!-- End Navbar -->
+</head>
+
+<body>
+
+<h2>Triangular Arbitrage within Same Exchanges</h2>
+
+<p>Risk free profit - sounds too good to be true right? Well, it kind of is, as most markets are VERY efficient. I thought that I could try and find an inefficient cryptocurrency exchange and implement this trading strategy, but I found that opportunities were scarce and only lasted for milliseconds.</p>
+
+<p>I did not want explore cross exchange arbitrage yet, as the time risk cannot be calculated (inherent nature of cryptocurrency = wait for your transaction to be confirmed = will opportunity still be there by the time your transaction is confirmed?) and there are even more fees (withdrawal fees). There are definitely more opportunities in cross exchange arbitrage though.</p>
+
+<p>The idea behind triangular arbitrage is that one is taking advantage of market inefficiency, or gaps in the market. If the product of the spot prices <span> <img src="http://latex.codecogs.com/gif.latex?(S^{a/b}*S^{a/c}*S^{b/c})" border="0"/> is &lt; 1, there is a profitable opportunity provided one takes into account transaction fees. After running a script to calculate the amount of opportunities at a given time on Cryptopia (a relatively small exchange at $2.6 million trading volume), I learned that the product of the spot prices were all almost exactly 1. This means that the market is efficient (there are no significant gaps in market) and there is probably crowdedness occurring here (multiple people using the same strategy). A profitable bot would require very fast internet and constant API requests.</p>
+
+<p>Maybe I can find even less competitive exchanges. Passive income is never bad, no matter how small. Here is to exploring! :) </p>
+
+</body>
+</html>

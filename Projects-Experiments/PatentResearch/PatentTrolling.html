@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pandas!</title>
+<!-- Start Links -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120209270-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-120209270-1');
+</script>
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/png" href="../photos/konoha.png"/> 
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- Boostrap Mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:600|Slabo+27px" rel="stylesheet">
+<!-- CSS -->
+<link rel="stylesheet" href="../css/master.css">
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Javascript -->
+<script src="whothis.js"></script>
+<!-- End Links -->
+<!-- NavBar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light overlay">
+  <a class="navbar-brand" href="https://jasonwonton.github.io/">Jason Wong</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav nav-pills">
+          <a class="nav-link active" href="https://jasonwonton.github.io/Who">Jason Who?</a>
+        </li>
+        <li class="nav nav-pills">
+          <a class="nav-link active" href="https://jasonwonton.github.io/Writing">Writing</a>
+        </li>
+        <li class="nav nav-pills">
+            <a class="nav-link active" href="https://jasonwonton.github.io/Projects-Experiments">Projects/Experiments</a>
+        </li>
+        <li class="nav nav-pills">
+          <a class="nav-link active" href="Jason's Resume.pdf">Resume</a>
+        </li>
+    </ul>
+  </div>
+</nav> 
+<!-- End Navbar -->
+</head>
+
+<body>
+
+<h2>Applying Pandas and Seaborn to Research</h2>
+
+<p> A part of my research this semester was to scrape, analyze, and build visualization models with respect to patent trolls and patent product companies. After scraping/extracting data from various public and private databases into a csv file, I did some analysis and visualization in pandas and seaborn.</p>
+<p>Here is the notebook I worked on. </p>
+<p>Link:<a href="https://jasonwonton.github.io/Projects-Experiments/PatentResearch/PatentVisualization"> Patent Research Visualization</a></p>
+<p>Here is the SQL query I wrote to extract the number of applied patents from the EPO's (European Patent Office) World Patent Statistical Database</p>
+<p>
+<blockquote>
+  <pre>
+    <code>
+        select left(ipc_class_symbol, 8) as ipc,
+	datepart(year, appln_filing_date) as year, 
+	datepart(quarter, appln_filing_date) as quarter, 
+	count(*) as freq
+	from tls201_appln a
+	join tls209_appln_ipc i on a.appln_id = i.appln_id
+	where appln_filing_date between '1999-01-01' and '2016-12-31'
+	and left(ipc_class_symbol, 8) in (
+	#insert IPCs here
+	#insert IPCs here
+	#insert IPCs here
+	#insert IPCs here
+	#insert IPCs here
+	#insert IPCs here
+	)
+	group by left(ipc_class_symbol, 8), datepart(year, appln_filing_date), datepart(quarter, appln_filing_date)
+	order by ipc, year, quarter
+    </code>
+  </pre>
+</blockquote>
+</p>
+<p> Here is the Github repository of the data I scraped and cleaned if you ever want to do some analysis yourself!</p>
+<p> Link: <a href="https://github.com/jasonwonton/Patent-Trolling-Research">Patent Research Repository</a></p>
+</html>
