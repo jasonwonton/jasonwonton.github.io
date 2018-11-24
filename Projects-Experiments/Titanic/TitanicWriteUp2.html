@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Titanic Dataset</title>
+<!-- Start Links -->
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120209270-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-120209270-1');
+</script>
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/png" href="../../photos/konoha.png"/> 
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<!-- Boostrap Mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:600|Slabo+27px" rel="stylesheet">
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/master.css">
+<!-- Jquery -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Javascript -->
+<script src="whothis.js"></script>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+<!-- End Links -->
+<!-- NavBar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light overlay">
+  <a class="navbar-brand" href="https://jasonwonton.github.io/">Jason Wong</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav nav-pills">
+          <a class="nav-link active" href="https://jasonwonton.github.io/whothis">Jason Who?</a>
+        </li>
+        <li class="nav nav-pills">
+          <a class="nav-link active" href="https://jasonwonton.github.io/writing">Writing</a>
+        </li>
+        <li class="nav nav-pills">
+            <a class="nav-link active" href="https://jasonwonton.github.io/projects+experiments">Projects/Experiments</a>
+        </li>
+        <li class="nav nav-pills">
+          <a class="nav-link active" href="Jason's Resume.pdf">Resume</a>
+        </li>
+    </ul>
+  </div>
+</nav> 
+<!-- End Navbar -->
+</head>
+
+<body>
+
+<h2>Building on the Titanic Dataset</h2>
+<p>Here is my practice with the infamous Titanic dataset, but instead of checking against my training data, I actually submitted it to Kaggle for a score. Some methods I used here were Logistic Regression, Random Forests, K-Nearest-Neighbors, and Gaussian Naive Bayes, with Random Forests winning out.</p>
+<p>Link: <a href="https://jasonwonton.github.io/Projects-Experiments/Titanic/NewTitanicNotebook">New Titanic Notebook</a></p>
+<p> The <a href="https://www.kaggle.com/c/titanic">Titanic Kaggle Competition</a> is an introductory machine learning dataset, and I am building on my <a href="https://jasonwonton.github.io/Projects-Experiments/Titanic/TitanicNotebook"> last Titanic practice.</a> I essentially cleaned the data the same way as the last Titanic practice, but this time I used different models from sklearn.</p>
+<h2>Overview of Methods Used</h2>
+<p>We went over this last time in my last post, but here is the Logistic Regession Overview</p>
+<p><b>Logistic regression: essentially using the best fitting line for boolean values.</b></p>
+<p>Quick Logistic Regression Overview:</p>
+<blockquote>
+<p>The linear function is defined as: $$y= B_0 + B_1X$$ </p>
+<p>Linear graph:<img src="linear.PNG" style="width:250px;height:200px;"></img></p>
+<p> We then use y from the linear regression to plug into the sigmoid function: </p>
+<blockquote>Sigmoid function: $$p = {{1}\over{1+e^{-y}}}$$</blockquote>
+<p>We then plug in p into:</p>
+<blockquote>$$ln({{p}\over{1-p}})=B_0 + B_1X$$ </blockquote>
+<p>Which turns into:</p>
+<p>Logistic Graph:<img src="logistic.PNG" style="width:250px;height:200px;"></img></p>
+</blockquote>
+</html>
+
+<p><b>Random Forests: taking randomly selected data to create a bunch of decision trees (ensembles), then vote on the best decision.</b></p>
+<p>Quick Random Forest Overview:</p>
+<blockquote>
+  <p>In a random forest, we randomly select a set of variables from each group. Here is a graphical view of what it looks like.</p>
+  <p>Graphical Look:<img src="RandomForestsRandom.PNG" style="width:450px;height:300px;"></img></p>
+  <p>The randomization enables these decision trees to be uncorrelated, so that we are hopefully looking at the data in “different ways.” Here is how the randomization looks like for each decision the algorithm needs to make.</p>
+  <p>Voting:<img src="RandomForestRandomVote.PNG" style="width:522px;height:204px;"></img></p>
+</blockquote>
+
+<p><b>K-Nearest-Neighbors (KNN): using the K closest training examples in the features space to make a decision.</b></p>
+<p>Quick KNN Overview:</p>
+<blockquote>
+  <p> Because it is a majority vote decision, K must always be an odd number.</p>
+  <p> Similarity is defined as a metric distance between two datapoints, and a common choice is the Eucliddean distance given by: $$d(x,x') = {\sqrt{(x_1-x_1')+(x_2-x_2')+...+(x_n-x_n')} }$$</p>
+  <p>Some other measures that can be used are the Manhatten, Chebyshev and Hamming distance.</p>
+  <p>Graphical Look:<img src="KNN.gif" style="width:244px;height:222px;"></img></p>
+</blockquote>
+<p><b>Guassian Naive Bayes: assumes all features follow a Gaussian/Normal distribution and uses Bayes' Theorum to calculate the probability.</b></p>
+<blockquote>
+  <p>This method is called "Naive" because it incorrectly assumes every feature is independent, which may not always be the case</p>
+  <p>Overview: <img src="GNBOverview.jpeg" style="width:500px;height:388px;"></img></p>
+  <p>Graphical Look: <img src="NaiveBayes.png" style="width:500px;height:388px;"></img></p>
+</blockquote>
+
+<p>The Random Forest method ended up giving the most accurate prediction (96%) on our training data, so we used that for our test output. Look in the <a href="https://jasonwonton.github.io/Projects-Experiments/Titanic/NewTitanicNotebook">New Titanic Notebook</a> for the smaller details. :) </p>
+
+<p>This submission on Kaggle was 74% accurate, placing in the 89 percentile. Not bad!</p>
+<p><img src="Score Woot Woot.png" style="width:390px;height:100px"></img></p>
+</body>
